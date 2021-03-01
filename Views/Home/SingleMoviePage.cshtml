@@ -1,0 +1,27 @@
+@* ViewBag.Movie *@
+@* ViewBag.Movie.Likes *@
+@* ViewBag.Movie.Postedby *@
+@{
+    Movie movie = ViewBag.Movie;
+    @* var currentUser.CurrentUser; *@
+}
+
+<h1>@ViewBag.Movie.Title</h1>
+
+<img src="@ViewBag.Movie.ImageURL" alt="@ViewBag.Movie.Title">
+
+
+<p>Starring: @ViewBag.Movie.Starring</p>
+<p>ReleaseDate: @ViewBag.Movie.ReleaseDate.ToString("d")</p>
+<p>PostedBy: @ViewBag.Movie.PostedBy.FirstName</p>
+
+<h3>Fans</h3>
+<ul>
+    @foreach (var like in ViewBag.Movie.Likes)
+    {
+        
+        <a href="/users/@like.UserWhoLikes.UserId">
+            <li>@like.UserWhoLikes.FirstName</li>
+        </a>
+    }
+</ul>

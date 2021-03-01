@@ -1,0 +1,21 @@
+@* We can use a different Model *@
+
+@model LoginUser
+
+<form action="/login" method="post">
+<h1>Login</h1>
+    <div>
+        <label asp-for="LoginEmail"></label>
+        <input asp-for="LoginEmail" type="text" >
+        <span asp-validation-for="LoginEmail"></span>
+    </div>
+    <div>
+        <label asp-for="LoginPassword"></label>
+        <input asp-for="LoginPassword" type="text" >
+        <span asp-validation-for="LoginPassword"></span>
+    </div>
+
+    <button>Loggin Buddy</button>
+    @* <partial></partial> *@
+    
+</form>

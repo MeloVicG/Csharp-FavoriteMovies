@@ -1,0 +1,26 @@
+<h1>Post a Movie</h1>
+
+@model Movie
+<form action="/movies" method="post">
+    <div>
+        <label asp-for="Title"></label>
+        <input asp-for="Title" type="text" >
+        <span asp-validation-for="Title"></span>
+    </div>
+    <div>
+        <label asp-for="Starring"></label>
+        <input asp-for="Starring" type="text" >
+        <span asp-validation-for="Starring"></span>
+    </div>
+    <div>
+        <label asp-for="ImageURL"></label>
+        <input asp-for="ImageURL" type="text" >
+        <span asp-validation-for="ImageURL"></span>
+    </div>
+    <div>
+        <label asp-for="ReleaseDate"></label>
+        <input asp-for="ReleaseDate" type="date" >
+        <span asp-validation-for="ReleaseDate"></span>
+    </div>
+    <button>Create new Movie</button>
+</form>
